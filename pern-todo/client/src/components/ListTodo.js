@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+
 import EditTodo from "./EditTodo";
 
 const ListTodos = () => {
@@ -38,10 +39,10 @@ const ListTodos = () => {
     return (
         <Fragment>
             {" "}
-            <table className="table mt-5 text-center">
+            <table class="table mt-5 text-center">
                 <thead>
                     <tr>
-                        <th>Description</th>
+                        <th class="text-right">Description</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -57,14 +58,15 @@ const ListTodos = () => {
                             <td>{todo.description}</td>
                             <td>
                                 <EditTodo todo={todo} />
-
                             </td>
-                            <button
-                                className="btn btn-danger"
-                                onClick={() => deleteTodo(todo.todo_id)}
-                            >
-                                Delete
-                            </button>
+                            <td>
+                                <button
+                                    className="btn btn-danger"
+                                    onClick={() => deleteTodo(todo.todo_id)}
+                                >
+                                    Delete
+                                </button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
